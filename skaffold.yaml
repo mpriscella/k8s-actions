@@ -1,0 +1,15 @@
+apiVersion: skaffold/v2beta1
+kind: Config
+metadata:
+  name: k8s-actions
+build:
+  artifacts:
+    - image: mpriscella/k8s-actions
+      context: .
+deploy:
+  helm:
+    releases:
+    - name: github-runner
+      chartPath: ./chart
+      values:
+        image: mpriscella/k8s-actions

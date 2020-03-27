@@ -1,0 +1,13 @@
+apiVersion: v2
+name: K8s Actions
+version: 0.0.1
+description: GitHub Actions Runner for Kubernetes
+type: application
+keywords:
+  - github
+  - actions
+  - self-hosted
+  - runner
+maintainers:
+  - name: Mike Priscella
+    email: mpriscella@gmail.com

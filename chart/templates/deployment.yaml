@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: runner
+        image: mpriscella/k8s-actions
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /tmp/healthy
+        lifecycle:
+          preStop:
+            exec:
+              command: ["./remove.sh"]
+        resources:
+{{- toYaml .Values.resources | nindent 10 }}
+        env:
+          - name: OWNER
+            value: {{ .Values.repositoryOwner }}
+          - name: REPO
+            value: {{ .Values.repository }}
+        envFrom:
+          - secretRef:
+              name: {{ .Release.Name }}
