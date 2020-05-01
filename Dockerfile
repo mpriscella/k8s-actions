@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ARG version=2.165.2
 
-RUN apt-get update; apt-get install curl sudo jq -y
+RUN apt-get update; apt-get install curl docker.io sudo jq -y
 
 RUN useradd -ms /bin/bash github
 WORKDIR /home/github

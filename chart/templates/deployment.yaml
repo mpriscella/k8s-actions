@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: runner
-        image: mpriscella/k8s-actions
+        image: {{ .Values.image }}
         livenessProbe:
           exec:
             command:
@@ -26,7 +26,7 @@ spec:
             exec:
               command: ["./remove.sh"]
         resources:
-{{- toYaml .Values.resources | nindent 10 }}
+          {{- toYaml .Values.resources | nindent 10 }}
         env:
           - name: OWNER
             value: {{ .Values.repositoryOwner }}
@@ -35,3 +35,13 @@ spec:
         envFrom:
           - secretRef:
               name: {{ .Release.Name }}
+        volumeMounts:
+        - mountPath: /var/run/docker.sock
+          name: docker-socket
+        securityContext:
+          privileged: true
+      volumes:
+        - name: docker-socket
+          hostPath:
+            path: /var/run/docker.sock
+            type: File

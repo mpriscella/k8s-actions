@@ -1,0 +1,10 @@
+resources: {}
+# limits:
+#   memory: "1G"
+#   cpu: "1000m"
+
+repositoryOwner: ""
+repository: ""
+personalAccessToken: ""
+
+image: mpriscella/k8s-actions:latest

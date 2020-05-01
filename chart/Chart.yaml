@@ -1,6 +1,7 @@
 apiVersion: v2
-name: K8s Actions
-version: 0.0.1
+name: k8s-github-action-runner
+version: 1.0.0
+appVersion: 2.165.2
 description: GitHub Actions Runner for Kubernetes
 type: application
 keywords:

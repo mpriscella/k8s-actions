@@ -1,7 +1,5 @@
 # Kubernetes GitHub Action Runner
 
-Will need instance group with c5d.4xlarge and c5.4xlarge instances.
-
 This chart is not hosted anywhere currently. To install the chart, you must
 download this repository and unpack it into a directory.
 
@@ -30,9 +28,10 @@ $ helm delete my-release
 
 ## Configuration
 
-| Parameter             | Description                         | Default |
-| --------------------- | ----------------------------------- | ------- |
-| `resources`           | CPU/Memory resource requests/limits | `{}`    |
-| `repositoryOwner`     | Owner of the repository.                                   | `''`    |
-| `repository`          | Repository name.                                    | `''`    |
-| `personalAccessToken` | GitHub Personal Access Token                                     | `''`    |
+| Parameter             | Description                          | Default                         |
+| --------------------- | ------------------------------------ | ------------------------------- |
+| `resources`           | CPU/Memory resource requests/limits. | `{}`                            |
+| `repositoryOwner`     | Owner of the repository.             | `""`                            |
+| `repository`          | Repository name.                     | `""`                            |
+| `personalAccessToken` | GitHub Personal Access Token.        | `""`                            |
+| `image`               | Image.                               | `mpriscella/k8s-actions:latest` |
