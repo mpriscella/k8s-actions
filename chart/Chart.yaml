@@ -3,6 +3,7 @@ name: k8s-github-action-runner
 version: 1.0.0
 appVersion: 2.165.2
 description: GitHub Actions Runner for Kubernetes
+home: https://github.com/mpriscella/k8s-actions
 type: application
 keywords:
   - github
@@ -10,5 +11,5 @@ keywords:
   - self-hosted
   - runner
 maintainers:
-  - name: Mike Priscella
+  - name: mpriscella
     email: mpriscella@gmail.com
