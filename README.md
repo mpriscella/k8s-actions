@@ -1,5 +1,9 @@
 # Kubernetes GitHub Action Runner
 
+⚠️ This project is no longer maintained. Alternate solutions can be found [here](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners#recommended-autoscaling-solutions).
+
+---
+
 This chart is not hosted anywhere currently. To install the chart, you must
 download this repository and unpack it into a directory.
 
